@@ -2,13 +2,13 @@ import 'package:app2/widgets/auth_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:app2/widgets/appbar_widget.dart';
 
-class LoginScreen extends StatelessWidget {
+class SignupScreen extends StatelessWidget {
   //text editing controllers
   final TextEditingController emailController = TextEditingController();
   final TextEditingController pwController = TextEditingController();
   final TextEditingController konfirmasiPwController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
-  LoginScreen({super.key});
+  SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
               //TITLE
               const Center(
                 child: Text(
-                  "Masuk",
+                  "Registrasi",
                   style: TextStyle(
                     fontSize: 30,
                     color: Colors.black,
@@ -50,6 +50,21 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
 
+              //EMAIL
+              Container(
+                margin: const EdgeInsets.only(bottom: 8),
+                child: const Text(
+                  'Email',
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
+                ),
+              ),
+              AuthTextfield(
+                controller: emailController,
+                hintText: 'Email',
+                obscureText: false,
+              ),
+              const SizedBox(height: 10),
+
               //PASSWORD
               Container(
                 margin: const EdgeInsets.only(bottom: 8),
@@ -65,30 +80,29 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
 
-              //Forgot pass link
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Text('Lupa kata sandi? '),
-                  GestureDetector(
-                    onTap: () {
-                      debugPrint("Klik disini");
-                    },
-                    child: Text(
-                      'Klik disini',
-                      style: TextStyle(color: Colors.red[700]),
-                    ),
-                  )
-                ],
+              //konfirmasi PASSWORD
+              Container(
+                margin: const EdgeInsets.only(bottom: 8),
+                child: const Text(
+                  'Konfirmasi password',
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
+                ),
               ),
+              AuthTextfield(
+                controller: konfirmasiPwController,
+                hintText: 'Konfirmasi password',
+                obscureText: true,
+              ),
+              const SizedBox(height: 10),
 
               const Flexible(
                   child: SizedBox(
-                height: 1000,
+                height: 200,
               )),
 
               //Button
-              Center(
+              Align(
+                alignment: Alignment.bottomCenter,
                 child: Column(
                   children: [
                     FilledButton(
@@ -99,14 +113,12 @@ class LoginScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                               8.0), // Adjust this value to change the roundedness
                         ),
-                        padding: const EdgeInsets.symmetric(horizontal: 105),
+                        padding: const EdgeInsets.symmetric(horizontal: 110),
                       ),
-                      onPressed: () {
-                        debugPrint("Masuk");
-                      },
+                      onPressed: () {},
                       child: Row(
                         children: [
-                          const Text('Masuk ke Beranda'),
+                          const Text('Gabung sekarang'),
                           const SizedBox(width: 10),
                           Image.asset(
                             'assets/Right Arrow.png',
@@ -114,21 +126,7 @@ class LoginScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text('Belum punya akun? '),
-                        GestureDetector(
-                          onTap: () {
-                            debugPrint("Buat disini");
-                          },
-                          child: Text(
-                            'Buat disini',
-                            style: TextStyle(color: Colors.red[700]),
-                          ),
-                        )
-                      ],
-                    )
+                    const Text('Sudah punya akun? masuk disini')
                   ],
                 ),
               ),
