@@ -2,17 +2,18 @@ import 'package:playandpizza/widgets/auth_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:playandpizza/widgets/appbar_widget.dart';
 
-class RegistrationScreen extends StatelessWidget {
+class SignupScreen extends StatelessWidget {
   //text editing controllers
   final TextEditingController emailController = TextEditingController();
   final TextEditingController pwController = TextEditingController();
   final TextEditingController konfirmasiPwController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
-  RegistrationScreen({super.key});
+  SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: const AuthAppBar(),
         body: Container(
           margin: const EdgeInsets.symmetric(horizontal: 18),
@@ -83,7 +84,7 @@ class RegistrationScreen extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(bottom: 8),
                 child: const Text(
-                  'Konfirmasi Password',
+                  'Konfirmasi password',
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
                 ),
               ),
@@ -94,7 +95,7 @@ class RegistrationScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
 
-              Flexible(
+              const Flexible(
                   child: SizedBox(
                 height: 200,
               )),
@@ -112,12 +113,16 @@ class RegistrationScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                               8.0), // Adjust this value to change the roundedness
                         ),
-                        padding: EdgeInsets.symmetric(horizontal: 120),
+                        padding: const EdgeInsets.symmetric(horizontal: 110),
                       ),
                       onPressed: () {},
                       child: Row(
                         children: [
                           const Text('Gabung sekarang'),
+                          const SizedBox(width: 10),
+                          Image.asset(
+                            'assets/Right Arrow.png',
+                          ),
                         ],
                       ),
                     ),

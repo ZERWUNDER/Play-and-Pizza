@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:playandpizza/screens/registration_screen.dart';
+import 'package:playandpizza/screens/login_screen.dart';
 import 'package:playandpizza/screens/pages_layout.dart';
+import 'package:playandpizza/screens/signup_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -104,10 +105,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: ElevatedButton(
                 onPressed: () {
                   // Halaman Registration
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => RegistrationScreen()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignupScreen()));
                 },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.all(10),
@@ -142,6 +141,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 TextButton(
                   onPressed: () {
                     // Masuk Akun
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()));
                   },
                   child: Text(
                     'Masuk disini',
