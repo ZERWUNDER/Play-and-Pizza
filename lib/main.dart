@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:playandpizza/screens/pages_layout.dart';
+import 'package:playandpizza/screens/onboarding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: PagesLayout(),
+      home: const OnboardingScreen(),
     );
   }
 }

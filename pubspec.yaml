@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   flutter_native_splash: ^2.4.0
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +72,7 @@ flutter:
     - assets/Onboarding Illustration - 2.png
     - assets/Onboarding Illustration - 3.png
     - assets/coin.png
+    - assets/peperoni.png
     # - assets/Onboarding Illustration - 4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

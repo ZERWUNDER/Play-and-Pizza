@@ -1,14 +1,14 @@
-import 'package:app2/widgets/auth_textfield.dart';
+import 'package:playandpizza/widgets/auth_textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:app2/widgets/appbar_widget.dart';
+import 'package:playandpizza/widgets/appbar_widget.dart';
 
-class LoginScreen extends StatelessWidget {
+class RegistrationScreen extends StatelessWidget {
   //text editing controllers
   final TextEditingController emailController = TextEditingController();
   final TextEditingController pwController = TextEditingController();
   final TextEditingController konfirmasiPwController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
-  LoginScreen({super.key});
+  RegistrationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

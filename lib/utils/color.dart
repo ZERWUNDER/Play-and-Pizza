@@ -7,3 +7,5 @@ const navBackground = Color.fromARGB(255, 238, 238, 238);
 const navIcon = Color(0xff60656B);
 const navIconSelected = Color(0xff000000);
 const navSelected = Color.fromARGB(255, 189, 189, 189);
+
+const pizzaWidgetBackgroud = Color.fromARGB(255, 230, 230, 230);
