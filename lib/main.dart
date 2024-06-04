@@ -26,10 +26,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Align(
-            alignment: Alignment.topLeft,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20.0, top: 30.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0, top: 30.0),
+            child: Align(
+              alignment: Alignment.topLeft,
               child: Image.asset(
                 'assets/Logo PP Light.png',
                 width: 100,
@@ -37,10 +37,10 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.topRight,
-            child: Padding(
-              padding: const EdgeInsets.only(right: 10.0, top: 50.0),
+          Padding(
+            padding: const EdgeInsets.only(right: 10.0, top: 50.0),
+            child: Align(
+              alignment: Alignment.topRight,
               child: TextButton(
                 onPressed: () {
                   // Halaman Home (as Guest)
@@ -57,118 +57,104 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            top: 150.0,
-            left: MediaQuery.of(context).size.width / 2 - 200,
-            child: Image.asset(
-              'assets/Onboarding Illustration - 1.png',
-              width: 400,
-              height: 400,
-            ),
-          ),
-          Positioned(
-            top: 550.0,
-            width: MediaQuery.of(context).size.width,
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 0),
-                child: Column(
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: 120),
+                Center(
+                  child: Image.asset(
+                    'assets/Onboarding Illustration - 1.png',
+                    width: 400,
+                    height: 400,
+                  ),
+                ),
+                SizedBox(height: 30),
+                Text(
+                  'Mainkan Ragam Games',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: 'Poppins',
+                  ),
+                ),
+                Text(
+                  'yang Menarik',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: 'Poppins',
+                  ),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'menangkan dan kumpulkan tiket',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Poppins',
+                  ),
+                ),
+                Text(
+                  'sebanyak-banyaknya!',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Poppins',
+                  ),
+                ),
+                SizedBox(height: 60),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // Halaman Registration
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.all(10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4),
+                        side: BorderSide(width: 1, color: Colors.white),
+                      ),
+                      backgroundColor: Color(0xFFBD0000),
+                    ),
+                    child: Text(
+                      'Gabung Sekarang',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Mainkan Ragam Games',
+                      'Sudah punya akun?',
                       style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Poppins',
-                      ),
-                    ),
-                    Text(
-                      'yang Menarik',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Poppins',
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'menangkan dan kumpulkan tiket',
-                      style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        fontFamily: 'Poppins',
+                        color: Colors.black,
                       ),
                     ),
-                    Text(
-                      'sebanyak-banyaknya!',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'Poppins',
+                    TextButton(
+                      onPressed: () {
+                        // Halaman Log In
+                      },
+                      child: Text(
+                        'Masuk disini',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFFBD0000),
+                        ),
                       ),
                     ),
                   ],
                 ),
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 60,
-            width: MediaQuery.of(context).size.width,
-            child: Center(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.9,
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Halaman Registration
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.all(10),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
-                      side: BorderSide(width: 1, color: Colors.white),
-                    ),
-                    backgroundColor: Color(0xFFBD0000),
-                  ),
-                  child: Text(
-                    'Gabung Sekarang',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 20,
-            width: MediaQuery.of(context).size.width,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Sudah punya akun?',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black,
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    // Halaman Log In
-                  },
-                  child: Text(
-                    'Masuk disini',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFFBD0000),
-                    ),
-                  ),
-                ),
+                SizedBox(height: 20),
               ],
             ),
           ),
