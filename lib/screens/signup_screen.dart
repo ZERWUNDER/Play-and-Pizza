@@ -22,6 +22,9 @@ class SignupScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(
+                height: 12,
+              ),
               //TITLE
               const Center(
                 child: Text(
@@ -126,7 +129,28 @@ class SignupScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const Text('Sudah punya akun? masuk disini')
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('Sudah punya akun? '),
+                        TextButton(
+                          onPressed: () {
+                            // Log In
+                            Navigator.pushNamed(context, '/login');
+                          },
+                          style: TextButton.styleFrom(
+                            padding: const EdgeInsets.all(0),
+                          ),
+                          child: const Text(
+                            'Masuk disini',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFFBD0000),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),

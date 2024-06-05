@@ -7,16 +7,19 @@ class AuthAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image.asset(
-            'assets/Logo PP Light.png',
-            width: 100,
-            height: 100,
-          ),
-        ],
+      title: Padding(
+        padding: const EdgeInsets.only(top: 10, left: 0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/Logo_PNP_Light.png',
+              width: 100,
+              height: 100,
+            ),
+          ],
+        ),
       ),
       backgroundColor: Colors.white,
     );
