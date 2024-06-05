@@ -154,23 +154,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     PizzaWidget(
                       pizzaImage: 'assets/cheese_onions.png',
-                      pizzaName: 'Cheese & Onions',
+                      pizzaName: 'Keju & Bawang',
                     ),
                     PizzaWidget(
                       pizzaImage: 'assets/mushroom.png',
-                      pizzaName: 'Mushroom',
+                      pizzaName: 'Jamur',
                     ),
                     PizzaWidget(
                       pizzaImage: 'assets/cheese_tomatoes.png',
-                      pizzaName: 'Cheese Tomatoes',
+                      pizzaName: 'Keju & Tomat',
                     ),
                     PizzaWidget(
                       pizzaImage: 'assets/double_cheese.png',
-                      pizzaName: 'Double Cheese',
+                      pizzaName: 'Keju Mozarella',
                     ),
                     PizzaWidget(
                       pizzaImage: 'assets/nuggets.png',
-                      pizzaName: 'Nuggets',
+                      pizzaName: 'Nuget Ayam',
                     ),
                   ],
                 ),

@@ -64,7 +64,7 @@ class _PagesLayoutState extends State<PagesLayout> {
                     Icons.home_rounded,
                     color: navIcon,
                   ),
-            label: 'Home',
+            label: 'Beranda',
           ),
           NavigationDestination(
             icon: _page == 1
@@ -76,7 +76,7 @@ class _PagesLayoutState extends State<PagesLayout> {
                     Icons.gamepad,
                     color: navIcon,
                   ),
-            label: 'Game',
+            label: 'Permainan',
           ),
           NavigationDestination(
             icon: _page == 2
@@ -100,7 +100,7 @@ class _PagesLayoutState extends State<PagesLayout> {
                     Icons.settings,
                     color: navIcon,
                   ),
-            label: 'Settings',
+            label: 'Pengaturan',
           ),
         ],
         onDestinationSelected: navigationTapped,
