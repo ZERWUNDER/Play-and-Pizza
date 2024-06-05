@@ -59,7 +59,7 @@ class OnboardingPage extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Center(
             child: Image.asset(
               imagePath,
@@ -67,7 +67,7 @@ class OnboardingPage extends StatelessWidget {
               height: 400,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           ...texts.asMap().entries.map((entry) {
             int index = entry.key;
             String text = entry.value;
@@ -77,7 +77,7 @@ class OnboardingPage extends StatelessWidget {
               textAlign: TextAlign.center,
             );
           }).toList(),
-          SizedBox(height: 60),
+          const SizedBox(height: 60),
         ],
       ),
     );

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:playandpizza/screens/onboarding.dart';
+import 'package:playandpizza/screens/signup_screen.dart';
+import 'package:playandpizza/screens/login_screen.dart';
+import 'package:playandpizza/screens/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +19,11 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       home: const OnboardingScreen(),
+      routes: {
+        '/home': (context) => const HomeScreen(),
+        '/login': (context) => LoginScreen(),
+        '/signup': (context) => SignupScreen()
+      },
     );
   }
 }

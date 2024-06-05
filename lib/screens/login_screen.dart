@@ -22,6 +22,9 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(
+                height: 12,
+              ),
               //TITLE
               const Center(
                 child: Text(
@@ -72,7 +75,7 @@ class LoginScreen extends StatelessWidget {
                   const Text('Lupa kata sandi? '),
                   GestureDetector(
                     onTap: () {
-                      debugPrint("Klik disini");
+                      Navigator.pushNamed(context, '/reset');
                     },
                     child: Text(
                       'Klik disini',
@@ -118,15 +121,23 @@ class LoginScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text('Belum punya akun? '),
-                        GestureDetector(
-                          onTap: () {
-                            debugPrint("Buat disini");
+                        TextButton(
+                          onPressed: () {
+                            // Log In
+                            Navigator.pushNamed(context, '/signup');
                           },
-                          child: Text(
-                            'Buat disini',
-                            style: TextStyle(color: Colors.red[700]),
+                          style: TextButton.styleFrom(
+                            padding: const EdgeInsets.all(0),
                           ),
-                        )
+                          child: const Text(
+                            'Buat disini',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFFBD0000),
+                            ),
+                          ),
+                        ),
                       ],
                     )
                   ],

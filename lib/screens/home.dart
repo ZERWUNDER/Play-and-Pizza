@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Container(
           margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
           child: Image.asset(
-            'assets/Logo PP Light.png',
+            'assets/Logo_PP_Light.png',
             width: 100,
             height: 100,
           ),

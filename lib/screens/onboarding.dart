@@ -77,7 +77,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: SmoothPageIndicator(
               controller: _pageController,
               count: 3,
-              effect: JumpingDotEffect(
+              effect: const JumpingDotEffect(
                 activeDotColor: Color(0xFFBD0000),
                 dotColor: Color(0xFFFFC1C1),
                 dotHeight: 10,
@@ -85,24 +85,23 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             child: ElevatedButton(
               onPressed: () {
                 // Halaman Registration
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SignupScreen()));
+                Navigator.pushNamed(context, '/signup');
               },
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(4),
-                  side: BorderSide(width: 1, color: Colors.white),
+                  side: const BorderSide(width: 1, color: Colors.white),
                 ),
-                backgroundColor: Color(0xFFBD0000),
+                backgroundColor: const Color(0xFFBD0000),
               ),
-              child: Text(
+              child: const Text(
                 'Gabung Sekarang',
                 style: TextStyle(
                   fontSize: 16,
@@ -115,7 +114,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Sudah punya akun?',
                 style: TextStyle(
                   fontSize: 14,
@@ -126,11 +125,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               TextButton(
                 onPressed: () {
                   // Log In
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                  Navigator.pushNamed(context, '/login');
                 },
-                child: Text(
-                  'Masuk disini',
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.all(0),
+                ),
+                child: const Text(
+                  ' Masuk disini',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
