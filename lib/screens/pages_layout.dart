@@ -40,76 +40,74 @@ class _PagesLayoutState extends State<PagesLayout> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: PageView(
-          controller: pageController,
-          onPageChanged: onPageChanged,
-          physics: const NeverScrollableScrollPhysics(),
-          children: const [
-            HomeScreen(),
-            GammeScreen(),
-            PizzaScreen(),
-            SettingsScreen(),
-          ],
-        ),
-        bottomNavigationBar: NavigationBar(
-          destinations: [
-            NavigationDestination(
-              icon: _page == 0
-                  ? const Icon(
-                      Icons.home_rounded,
-                      color: navIconSelected,
-                    )
-                  : const Icon(
-                      Icons.home_rounded,
-                      color: navIcon,
-                    ),
-              label: 'Home',
-            ),
-            NavigationDestination(
-              icon: _page == 1
-                  ? const Icon(
-                      Icons.gamepad,
-                      color: navIconSelected,
-                    )
-                  : const Icon(
-                      Icons.gamepad,
-                      color: navIcon,
-                    ),
-              label: 'Game',
-            ),
-            NavigationDestination(
-              icon: _page == 2
-                  ? const Icon(
-                      Icons.local_pizza,
-                      color: navIconSelected,
-                    )
-                  : const Icon(
-                      Icons.local_pizza,
-                      color: navIcon,
-                    ),
-              label: 'Pizza',
-            ),
-            NavigationDestination(
-              icon: _page == 3
-                  ? const Icon(
-                      Icons.settings,
-                      color: navIconSelected,
-                    )
-                  : const Icon(
-                      Icons.settings,
-                      color: navIcon,
-                    ),
-              label: 'Settings',
-            ),
-          ],
-          onDestinationSelected: navigationTapped,
-          backgroundColor: navBackground,
-          indicatorColor: navSelected,
-          selectedIndex: _page,
-          height: 72,
-        ),
+    return Scaffold(
+      body: PageView(
+        controller: pageController,
+        onPageChanged: onPageChanged,
+        physics: const NeverScrollableScrollPhysics(),
+        children: const [
+          HomeScreen(),
+          GammeScreen(),
+          PizzaScreen(),
+          SettingsScreen(),
+        ],
+      ),
+      bottomNavigationBar: NavigationBar(
+        destinations: [
+          NavigationDestination(
+            icon: _page == 0
+                ? const Icon(
+                    Icons.home_rounded,
+                    color: navIconSelected,
+                  )
+                : const Icon(
+                    Icons.home_rounded,
+                    color: navIcon,
+                  ),
+            label: 'Beranda',
+          ),
+          NavigationDestination(
+            icon: _page == 1
+                ? const Icon(
+                    Icons.gamepad,
+                    color: navIconSelected,
+                  )
+                : const Icon(
+                    Icons.gamepad,
+                    color: navIcon,
+                  ),
+            label: 'Permainan',
+          ),
+          NavigationDestination(
+            icon: _page == 2
+                ? const Icon(
+                    Icons.local_pizza,
+                    color: navIconSelected,
+                  )
+                : const Icon(
+                    Icons.local_pizza,
+                    color: navIcon,
+                  ),
+            label: 'Pizza',
+          ),
+          NavigationDestination(
+            icon: _page == 3
+                ? const Icon(
+                    Icons.settings,
+                    color: navIconSelected,
+                  )
+                : const Icon(
+                    Icons.settings,
+                    color: navIcon,
+                  ),
+            label: 'Pengaturan',
+          ),
+        ],
+        onDestinationSelected: navigationTapped,
+        backgroundColor: navBackground,
+        indicatorColor: navSelected,
+        selectedIndex: _page,
+        height: 72,
       ),
     );
   }

@@ -40,10 +40,7 @@ class OnboardingPage extends StatelessWidget {
                   child: TextButton(
                     onPressed: () {
                       // Log In as Guest
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => PagesLayout()));
+                      Navigator.pushNamed(context, '/home');
                     },
                     child: const Text(
                       'Lewati',

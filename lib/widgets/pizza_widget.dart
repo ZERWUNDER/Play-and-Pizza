@@ -15,25 +15,44 @@ class PizzaWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(right: 12),
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      margin: const EdgeInsets.only(right: 12, bottom: 20),
       width: 150,
       height: 180,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8), color: pizzaWidgetBackgroud),
+        borderRadius: BorderRadius.circular(8),
+        color: pizzaWidgetBackgroud,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.4),
+            spreadRadius: 1,
+            blurRadius: 3,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            pizzaImage,
-            width: 140,
-            height: 140,
+          ClipRRect(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(12),
+              topRight: Radius.circular(12),
+            ),
+            child: Image.asset(
+              pizzaImage,
+              width: 150,
+              height: 150,
+              fit: BoxFit.cover,
+            ),
           ),
-          Text(
-            pizzaName,
-            style:
-                GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w600),
+          Container(
+            margin: const EdgeInsets.only(left: 8, bottom: 4),
+            child: Text(
+              pizzaName,
+              style: GoogleFonts.poppins(
+                  fontSize: 14, fontWeight: FontWeight.w600),
+            ),
           )
         ],
       ),

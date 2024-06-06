@@ -18,14 +18,17 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        toolbarHeight: 80,
+        toolbarHeight: 60,
         backgroundColor: backgroundColor,
+        scrolledUnderElevation: 0,
         title: Container(
           margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
-          child: Image.asset(
-            'assets/Logo_PP_Light.png',
-            width: 100,
-            height: 100,
+          child: Text(
+            'Halo, Pengguna!',
+            style: GoogleFonts.poppins(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
         actions: [
@@ -77,18 +80,10 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+          margin: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Halo, Pengguna!',
-                style: GoogleFonts.poppins(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              const SizedBox(height: 4),
               Text(
                 'Mau memainkan\npermainan apa hari ini?',
                 style: GoogleFonts.poppins(
@@ -147,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 12,
               ),
               const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -158,28 +153,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       pizzaName: 'Peperoni',
                     ),
                     PizzaWidget(
-                      pizzaImage: 'assets/peperoni.png',
-                      pizzaName: 'Peperoni',
+                      pizzaImage: 'assets/cheese_onions.png',
+                      pizzaName: 'Keju & Bawang',
                     ),
                     PizzaWidget(
-                      pizzaImage: 'assets/peperoni.png',
-                      pizzaName: 'Peperoni',
+                      pizzaImage: 'assets/mushroom.png',
+                      pizzaName: 'Jamur',
                     ),
                     PizzaWidget(
-                      pizzaImage: 'assets/peperoni.png',
-                      pizzaName: 'Peperoni',
+                      pizzaImage: 'assets/cheese_tomatoes.png',
+                      pizzaName: 'Keju & Tomat',
                     ),
                     PizzaWidget(
-                      pizzaImage: 'assets/peperoni.png',
-                      pizzaName: 'Peperoni',
+                      pizzaImage: 'assets/double_cheese.png',
+                      pizzaName: 'Keju Mozarella',
                     ),
                     PizzaWidget(
-                      pizzaImage: 'assets/peperoni.png',
-                      pizzaName: 'Peperoni',
+                      pizzaImage: 'assets/nuggets.png',
+                      pizzaName: 'Nuget Ayam',
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

@@ -23,9 +23,12 @@ class GamesWidget extends StatelessWidget {
           Container(
             width: 175,
             height: 175,
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 200, 200, 200),
+            child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
+              child: Image.asset(
+                'assets/minigames.png',
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Container(
@@ -37,8 +40,8 @@ class GamesWidget extends StatelessWidget {
                 end: Alignment.bottomCenter,
                 colors: <Color>[
                   Colors.black.withAlpha(0),
-                  Colors.black12,
-                  Colors.black45
+                  Colors.black38,
+                  Colors.black87
                 ],
               ),
               borderRadius: BorderRadius.circular(12),
@@ -58,7 +61,7 @@ class GamesWidget extends StatelessWidget {
                   style: GoogleFonts.poppins(
                       color: Colors.white,
                       fontSize: 11,
-                      fontWeight: FontWeight.w400),
+                      fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(height: 4),
                 SizedBox(
