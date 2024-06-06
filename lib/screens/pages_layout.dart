@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:playandpizza/screens/game.dart';
-import 'package:playandpizza/screens/home.dart';
-import 'package:playandpizza/screens/pizza.dart';
-import 'package:playandpizza/screens/settings.dart';
+import 'package:playandpizza/screens/game_screen.dart';
+import 'package:playandpizza/screens/home_screen.dart';
+import 'package:playandpizza/screens/pizza_screen.dart';
+import 'package:playandpizza/screens/settings_screen.dart';
 import 'package:playandpizza/utils/color.dart';
 
 class PagesLayout extends StatefulWidget {

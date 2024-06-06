@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playandpizza/utils/color.dart';
 import 'package:playandpizza/widgets/games_widget.dart';
-import 'package:playandpizza/widgets/pizza_widget.dart';
+import 'package:playandpizza/widgets/pizza_home_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -143,27 +143,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    PizzaWidget(
+                    PizzaHomeWidget(
                       pizzaImage: 'assets/peperoni.png',
                       pizzaName: 'Peperoni',
                     ),
-                    PizzaWidget(
+                    PizzaHomeWidget(
                       pizzaImage: 'assets/cheese_onions.png',
                       pizzaName: 'Keju & Bawang',
                     ),
-                    PizzaWidget(
+                    PizzaHomeWidget(
                       pizzaImage: 'assets/mushroom.png',
                       pizzaName: 'Jamur',
                     ),
-                    PizzaWidget(
+                    PizzaHomeWidget(
                       pizzaImage: 'assets/cheese_tomatoes.png',
                       pizzaName: 'Keju & Tomat',
                     ),
-                    PizzaWidget(
+                    PizzaHomeWidget(
                       pizzaImage: 'assets/double_cheese.png',
                       pizzaName: 'Keju Mozarella',
                     ),
-                    PizzaWidget(
+                    PizzaHomeWidget(
                       pizzaImage: 'assets/nuggets.png',
                       pizzaName: 'Nuget Ayam',
                     ),

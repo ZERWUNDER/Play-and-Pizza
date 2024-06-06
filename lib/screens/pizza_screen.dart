@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playandpizza/utils/color.dart';
+import 'package:playandpizza/widgets/pizza_widget.dart';
 
 class PizzaScreen extends StatefulWidget {
   const PizzaScreen({super.key});
@@ -69,8 +70,50 @@ class _PizzaScreenState extends State<PizzaScreen> {
                 ],
               ),
             ),
-          )
+          ),
         ],
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 20),
+          child: const Column(
+            children: [
+              const SizedBox(
+                height: 16,
+              ),
+              PizzaWidget(
+                pizzaImage: 'assets/peperoni.png',
+                pizzaName: 'Peperoni',
+                pizzaPrice: '100 tiket',
+              ),
+              PizzaWidget(
+                pizzaImage: 'assets/cheese_onions.png',
+                pizzaName: 'Keju & Bawang',
+                pizzaPrice: '100 tiket',
+              ),
+              PizzaWidget(
+                pizzaImage: 'assets/mushroom.png',
+                pizzaName: 'Jamur',
+                pizzaPrice: '100 tiket',
+              ),
+              PizzaWidget(
+                pizzaImage: 'assets/cheese_tomatoes.png',
+                pizzaName: 'Keju & Tomat',
+                pizzaPrice: '100 tiket',
+              ),
+              PizzaWidget(
+                pizzaImage: 'assets/double_cheese.png',
+                pizzaName: 'Keju Mozarella',
+                pizzaPrice: '100 tiket',
+              ),
+              PizzaWidget(
+                pizzaImage: 'assets/nuggets.png',
+                pizzaName: 'Nuget Ayam',
+                pizzaPrice: '100 tiket',
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
