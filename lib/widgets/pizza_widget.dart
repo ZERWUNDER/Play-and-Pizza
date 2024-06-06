@@ -25,8 +25,8 @@ class PizzaWidget extends StatelessWidget {
           BoxShadow(
             color: Colors.grey.withOpacity(0.4),
             spreadRadius: 1,
-            blurRadius: 3,
-            offset: const Offset(0, 3),
+            blurRadius: 1,
+            offset: const Offset(0, 1),
           ),
         ],
       ),

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:playandpizza/screens/onboarding_page.dart';
-import 'package:playandpizza/screens/login_screen.dart';
-import 'package:playandpizza/screens/pages_layout.dart';
-import 'package:playandpizza/screens/signup_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);

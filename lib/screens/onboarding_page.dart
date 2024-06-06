@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:playandpizza/screens/pages_layout.dart';
 
 class OnboardingPage extends StatelessWidget {
   final String imagePath;

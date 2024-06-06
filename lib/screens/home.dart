@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playandpizza/utils/color.dart';
 import 'package:playandpizza/widgets/games_widget.dart';
@@ -90,8 +89,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 22, fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 16),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              const Wrap(
+                crossAxisAlignment: WrapCrossAlignment.center,
+                spacing: 20,
+                runSpacing: 20,
                 children: [
                   GamesWidget(
                     gameImage: '',
@@ -103,12 +104,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     gameName: 'Minigame 2',
                     gamePrice: '100 coins',
                   ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
                   GamesWidget(
                     gameImage: '',
                     gameName: 'Minigame 3',
