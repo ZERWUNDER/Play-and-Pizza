@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:playandpizza/utils/color.dart';
 import 'package:playandpizza/widgets/games_widget.dart';
 import 'package:playandpizza/widgets/pizza_home_widget.dart';
+import 'package:playandpizza/screens/pages_layout.dart';
+import 'package:playandpizza/main.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -49,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    '837',
+                    '$coins',
                     style: GoogleFonts.poppins(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -127,13 +129,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: GoogleFonts.poppins(
                         fontSize: 14, fontWeight: FontWeight.w700),
                   ),
-                  Text(
+                  GestureDetector(
+                    onTap: () {
+                     Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PagesLayout(page: 2),
+                      ),
+                    );
+                  },
+                  child: Text(
                     'Selengkapnya',
                     style: GoogleFonts.poppins(
-                        fontSize: 12.5,
+                      fontSize: 12.5,
                         fontWeight: FontWeight.w500,
-                        color: primaryColor),
-                  ),
+                        color: primaryColor,
+                      ),
+                    ),
+                  )
                 ],
               ),
               const SizedBox(
