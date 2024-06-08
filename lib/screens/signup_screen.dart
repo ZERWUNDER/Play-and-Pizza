@@ -1,14 +1,28 @@
+import 'dart:developer';
+
 import 'package:playandpizza/widgets/auth_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:playandpizza/widgets/appbar_widget.dart';
+import 'package:playandpizza/resources/auth_service.dart';
 
-class SignupScreen extends StatelessWidget {
-  //text editing controllers
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController pwController = TextEditingController();
-  final TextEditingController konfirmasiPwController = TextEditingController();
-  final TextEditingController usernameController = TextEditingController();
+class SignupScreen extends StatefulWidget {
   SignupScreen({super.key});
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  final _auth = AuthService();
+
+  //text editing controllers
+  final TextEditingController _emailController = TextEditingController();
+
+  final TextEditingController _pwController = TextEditingController();
+
+  final TextEditingController _konfirmasiPwController = TextEditingController();
+
+  final TextEditingController _usernameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +61,7 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               AuthTextfield(
-                controller: usernameController,
+                controller: _usernameController,
                 hintText: 'Username',
                 obscureText: false,
               ),
@@ -62,7 +76,7 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               AuthTextfield(
-                controller: emailController,
+                controller: _emailController,
                 hintText: 'Email',
                 obscureText: false,
               ),
@@ -77,7 +91,7 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               AuthTextfield(
-                controller: pwController,
+                controller: _pwController,
                 hintText: 'Password',
                 obscureText: true,
               ),
@@ -92,7 +106,7 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               AuthTextfield(
-                controller: konfirmasiPwController,
+                controller: _konfirmasiPwController,
                 hintText: 'Konfirmasi password',
                 obscureText: true,
               ),
@@ -118,7 +132,7 @@ class SignupScreen extends StatelessWidget {
                         ),
                         padding: const EdgeInsets.symmetric(horizontal: 110),
                       ),
-                      onPressed: () {},
+                      onPressed: _signup,
                       child: Row(
                         children: [
                           const Text('Gabung sekarang'),
@@ -157,5 +171,23 @@ class SignupScreen extends StatelessWidget {
             ],
           ),
         ));
+  }
+
+  gotoLogin(BuildContext context) => Navigator.pushNamed(context, '/login');
+
+  _signup() async {
+    //Ccek apakah password dan konfirmasi password cocok
+    if (_pwController.text != _konfirmasiPwController.text) {
+      log('Password tidak sesuai');
+      return null;
+    }
+    log('Pass sesuai');
+
+    final user = await _auth.createUserWithEmailAndPassword(
+        _emailController.text, _pwController.text);
+    if (user != null) {
+      log('User created successfully');
+      gotoLogin(context);
+    }
   }
 }

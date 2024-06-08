@@ -4,10 +4,17 @@ import 'package:playandpizza/screens/pages_layout.dart';
 import 'package:playandpizza/screens/signup_screen.dart';
 import 'package:playandpizza/screens/login_screen.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'firebase_options.dart';
+
 int coins = 837; // initial coin
 int slices = 3; // initial slices
-
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

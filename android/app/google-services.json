@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "410922119654",
+    "project_id": "play-and-pizza",
+    "storage_bucket": "play-and-pizza.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410922119654:android:676c36c4442c9ef200e627",
+        "android_client_info": {
+          "package_name": "com.example.play_and_pizza"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY59ZAsG6Z1N-0Jg9B3RcF8E6QtWCrzDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,14 +1,25 @@
+import 'package:playandpizza/resources/Auth_service.dart';
+import 'dart:developer';
 import 'package:playandpizza/widgets/auth_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:playandpizza/widgets/appbar_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-class LoginScreen extends StatelessWidget {
-  //text editing controllers
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController pwController = TextEditingController();
-  final TextEditingController konfirmasiPwController = TextEditingController();
-  final TextEditingController usernameController = TextEditingController();
+class LoginScreen extends StatefulWidget {
   LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final _auth = AuthService();
+
+  //text editing controllers
+  final TextEditingController _emailController = TextEditingController();
+
+  final TextEditingController _pwController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +49,7 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 40),
 
-              //USERNAME
+              //EMAIL
               Container(
                 margin: const EdgeInsets.only(bottom: 8),
                 child: const Text(
@@ -47,8 +58,8 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               AuthTextfield(
-                controller: usernameController,
-                hintText: 'Username',
+                controller: _emailController,
+                hintText: 'email',
                 obscureText: false,
               ),
               const SizedBox(height: 10),
@@ -62,7 +73,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               AuthTextfield(
-                controller: pwController,
+                controller: _pwController,
                 hintText: 'Password',
                 obscureText: true,
               ),
@@ -104,9 +115,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                         padding: const EdgeInsets.symmetric(horizontal: 105),
                       ),
-                      onPressed: () {
-                        debugPrint("Masuk");
-                      },
+                      onPressed: _login,
                       child: Row(
                         children: [
                           const Text('Masuk ke Beranda'),
@@ -146,5 +155,17 @@ class LoginScreen extends StatelessWidget {
             ],
           ),
         ));
+  }
+
+  gotoHome(BuildContext context) => Navigator.pushNamed(context, '/home');
+
+  _login() async {
+    final user = await _auth.loginUserWithEmailAndPassword(
+        _emailController.text, _pwController.text);
+
+    if (user != null) {
+      log('User logged in successfully');
+      gotoHome(context);
+    }
   }
 }
