@@ -20,7 +20,7 @@ class GamesWidget extends StatelessWidget {
       height: 175,
       child: Stack(
         children: [
-          Container(
+          SizedBox(
             width: 175,
             height: 175,
             child: ClipRRect(

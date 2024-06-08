@@ -3,11 +3,13 @@ import 'package:playandpizza/screens/onboarding.dart';
 import 'package:playandpizza/screens/pages_layout.dart';
 import 'package:playandpizza/screens/signup_screen.dart';
 import 'package:playandpizza/screens/login_screen.dart';
-import 'package:playandpizza/screens/home.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_options.dart';
 
+int coins = 837; // initial coin
+int slices = 3; // initial slices
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
       ),
       home: const OnboardingScreen(),
       routes: {
-        '/home': (context) => const PagesLayout(),
+        '/home': (context) => const PagesLayout(page: 0),
         '/login': (context) => LoginScreen(),
         '/signup': (context) => SignupScreen()
       },

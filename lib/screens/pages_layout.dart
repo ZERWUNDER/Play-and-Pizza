@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:playandpizza/screens/game.dart';
-import 'package:playandpizza/screens/home.dart';
-import 'package:playandpizza/screens/pizza.dart';
-import 'package:playandpizza/screens/settings.dart';
+import 'package:playandpizza/screens/game_screen.dart';
+import 'package:playandpizza/screens/home_screen.dart';
+import 'package:playandpizza/screens/pizza_screen.dart';
+import 'package:playandpizza/screens/settings_screen.dart';
 import 'package:playandpizza/utils/color.dart';
 
 class PagesLayout extends StatefulWidget {
-  const PagesLayout({super.key});
+  final int page;
+  const PagesLayout({
+    required this.page,
+    super.key,
+  });
 
   @override
   State<PagesLayout> createState() => _PagesLayoutState();
@@ -19,7 +23,8 @@ class _PagesLayoutState extends State<PagesLayout> {
   @override
   void initState() {
     super.initState();
-    pageController = PageController();
+    _page = widget.page;
+    pageController = PageController(initialPage: _page);
   }
 
   @override

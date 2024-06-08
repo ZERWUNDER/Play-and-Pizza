@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playandpizza/utils/color.dart';
 import 'package:playandpizza/widgets/games_widget.dart';
-import 'package:playandpizza/widgets/pizza_widget.dart';
+import 'package:playandpizza/widgets/pizza_home_widget.dart';
+import 'package:playandpizza/screens/pages_layout.dart';
+import 'package:playandpizza/main.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -50,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    '837',
+                    '$coins',
                     style: GoogleFonts.poppins(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -90,8 +91,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 22, fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 16),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              const Wrap(
+                crossAxisAlignment: WrapCrossAlignment.center,
+                spacing: 20,
+                runSpacing: 20,
                 children: [
                   GamesWidget(
                     gameImage: '',
@@ -103,12 +106,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     gameName: 'Minigame 2',
                     gamePrice: '100 coins',
                   ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
                   GamesWidget(
                     gameImage: '',
                     gameName: 'Minigame 3',
@@ -132,13 +129,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: GoogleFonts.poppins(
                         fontSize: 14, fontWeight: FontWeight.w700),
                   ),
-                  Text(
+                  GestureDetector(
+                    onTap: () {
+                     Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PagesLayout(page: 2),
+                      ),
+                    );
+                  },
+                  child: Text(
                     'Selengkapnya',
                     style: GoogleFonts.poppins(
-                        fontSize: 12.5,
+                      fontSize: 12.5,
                         fontWeight: FontWeight.w500,
-                        color: primaryColor),
-                  ),
+                        color: primaryColor,
+                      ),
+                    ),
+                  )
                 ],
               ),
               const SizedBox(
@@ -148,27 +156,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    PizzaWidget(
+                    PizzaHomeWidget(
                       pizzaImage: 'assets/peperoni.png',
                       pizzaName: 'Peperoni',
                     ),
-                    PizzaWidget(
+                    PizzaHomeWidget(
                       pizzaImage: 'assets/cheese_onions.png',
                       pizzaName: 'Keju & Bawang',
                     ),
-                    PizzaWidget(
+                    PizzaHomeWidget(
                       pizzaImage: 'assets/mushroom.png',
                       pizzaName: 'Jamur',
                     ),
-                    PizzaWidget(
+                    PizzaHomeWidget(
                       pizzaImage: 'assets/cheese_tomatoes.png',
                       pizzaName: 'Keju & Tomat',
                     ),
-                    PizzaWidget(
+                    PizzaHomeWidget(
                       pizzaImage: 'assets/double_cheese.png',
                       pizzaName: 'Keju Mozarella',
                     ),
-                    PizzaWidget(
+                    PizzaHomeWidget(
                       pizzaImage: 'assets/nuggets.png',
                       pizzaName: 'Nuget Ayam',
                     ),

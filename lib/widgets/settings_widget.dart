@@ -11,30 +11,35 @@ class SettingsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
+        const SizedBox(
+          width: 10,
+        ),
         icon,
-        SizedBox(
-          width: 220,
-          child: Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  description,
-                  style: GoogleFonts.poppins(
-                    fontSize: 18,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                const Divider(
+        const SizedBox(
+          width: 28,
+        ),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                description,
+                style: GoogleFonts.poppins(
+                  fontSize: 18,
                   color: Colors.black,
-                  thickness: 2,
-                )
-              ],
-            ),
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              const Divider(
+                color: Colors.black,
+                thickness: 2,
+              )
+            ],
           ),
+        ),
+        const SizedBox(
+          width: 20,
         ),
         IconButton(
           onPressed: () {},
