@@ -187,7 +187,6 @@ class _SignupScreenState extends State<SignupScreen> {
         _emailController.text, _pwController.text);
     if (user != null) {
       log('User created successfully');
-      gotoLogin(context);
     }
   }
 }

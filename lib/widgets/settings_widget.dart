@@ -5,8 +5,12 @@ import 'package:playandpizza/utils/color.dart';
 class SettingsWidget extends StatelessWidget {
   final Icon icon;
   final String description;
+  final VoidCallback? buttonFunction;
   const SettingsWidget(
-      {super.key, required this.icon, required this.description});
+      {super.key,
+      required this.icon,
+      required this.description,
+      this.buttonFunction});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +46,7 @@ class SettingsWidget extends StatelessWidget {
           width: 20,
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: buttonFunction,
           icon: const Icon(
             Icons.keyboard_arrow_right,
             size: 36,

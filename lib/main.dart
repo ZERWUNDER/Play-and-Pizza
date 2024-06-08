@@ -3,10 +3,10 @@ import 'package:playandpizza/screens/onboarding.dart';
 import 'package:playandpizza/screens/pages_layout.dart';
 import 'package:playandpizza/screens/signup_screen.dart';
 import 'package:playandpizza/screens/login_screen.dart';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_options.dart';
+import 'package:playandpizza/resources/state_controll_wrapper.dart';
 
 int coins = 837; // initial coin
 int slices = 3; // initial slices
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const OnboardingScreen(),
+      home: const AuthStateWrapper(),
       routes: {
         '/home': (context) => const PagesLayout(page: 0),
         '/login': (context) => LoginScreen(),
