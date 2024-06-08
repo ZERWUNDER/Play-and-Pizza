@@ -35,12 +35,14 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
-  flutter_native_splash: ^2.4.0
   google_fonts: ^6.2.1
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.13.1"
+  flutter_native_splash: ^2.4.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -54,10 +56,21 @@ dev_dependencies:
 
 flutter_native_splash:
   color: "#ffffff"
-  image: assets/Logo_PNP_Light.png
+  image: assets/Logo_PNP_Light_Splash.png
+  android_12:
+    color: "#ffffff"
+    image: assets/Logo_PNP_Light_Splash.png
   android: true
   ios: true
   web: true
+
+flutter_launcher_icons:
+  android: "play_and_pizza"
+  ios: true
+  image_path: "assets/Logo_PNP_Light_Icon.png"
+  adaptive_icon_foreground: "assets/Logo_PNP_Light_Icon.png"
+  adaptive_icon_background: "#bd0000"
+  min_sdk_android: 21 # android min sdk min:16, default 21
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -69,6 +82,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/Logo_PNP_Light.png
+    - assets/Logo_PNP_Light_Icon.png
+    - assets/Logo_PNP_Light_Splash.png
     - assets/Onboarding Illustration - 1.png
     - assets/Onboarding Illustration - 2.png
     - assets/Onboarding Illustration - 3.png
